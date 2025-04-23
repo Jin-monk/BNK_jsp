@@ -28,10 +28,10 @@
 			for(MemberVO m : list){
 		%>
 			<tr>
-				<td><%=m.getId() %></td>
+				<%-- <td><%=m.getId() %></td>
 				<td><%=m.getPw() %></td>
 				<td><%=m.getName() %></td>
-				<td><%=m.getTel() %></td>
+				<td><%=m.getTel() %></td> --%>
 			</tr>
 		<%
 			}

@@ -33,25 +33,27 @@ public class RSPServlet extends HttpServlet {
 
 		// 결과 비교
 		// 1: 승 , 2: 무, 3:패
-		int result = 0;
+		String result ;
 		if (card == 1 && com == 3) {
-			result = 1;
+			result = "승";
 		} else if (card == 2 && com == 1) {
-			result = 1;
+			result = "승";
 		} else if (card == 3 && com == 2) {
-			result = 1;
+			result = "승";
 		} else if (card == 1 && com == 2) {
-			result = 3;
+			result = "패";
 		} else if (card == 2 && com == 3) {
-			result = 3;
+			result = "패";
 		} else if (card == 3 && com == 1) {
-			result = 3;
+			result = "패";
 		} else if (card == 1 && com == 1) {
-			result = 2;
+			result = "무";
 		} else if (card == 2 && com == 2) {
-			result = 2;
+			result = "무";
 		} else if (card == 3 && com == 3) {
-			result = 2;
+			result = "무";
+		} else {
+			result = null;
 		}
 
 		request.setAttribute("result",result);
