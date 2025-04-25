@@ -91,7 +91,6 @@ public class MemberDao {
 	
 	
 	
-	
 	public void update(Member member) throws SQLException {
 		String query = "UPDATE MEMBER_TBL_02 SET CUSTNAME = ?, PHONE = ?, ADDRESS = ?, GRADE = ?, CITY = ? WHERE CUSTNO = ?";
 		pstmt = conn.prepareStatement(query);
@@ -100,7 +99,7 @@ public class MemberDao {
 		pstmt.setString(3, member.getAddress());
 		pstmt.setString(4, member.getGrade());
 		pstmt.setString(5, member.getCity());
-		pstmt.setInt(6, Integer.parseInt(member.getCustNo()));
+		pstmt.setString(6,member.getCustNo());
 		System.out.println("고객번호: "+member.getCustNo());
 		int result = pstmt.executeUpdate();
 		System.out.println("업데이트 행수 "+result);
