@@ -13,7 +13,7 @@ public class DBUtil {
 	// 1. 접속 객체(Connection) 제공
 	public static Connection getConnection() {
 		String driver = "oracle.jdbc.driver.OracleDriver";
-		String url = "jbdc:oracle:thin:@localhost:1521:testdb";
+		String url = "jdbc:oracle:thin:@localhost:1521:testdb";
 		String id = "green";
 		String pw = "1234";
 

@@ -4,7 +4,7 @@ public class SingletonTest {
 	
 	public static void main(String[] agrs) {
 		
-		A a  = A.getInstance(); 
+		A a = A.getInstance(); 
 		
 		A b = A.getInstance();
 		

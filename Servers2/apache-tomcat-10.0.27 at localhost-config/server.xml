@@ -37,6 +37,27 @@
          UserDatabaseRealm to authenticate users
     -->
     <Resource auth="Container" description="User database that can be updated and saved" factory="org.apache.catalina.users.MemoryUserDatabaseFactory" name="UserDatabase" pathname="conf/tomcat-users.xml" type="org.apache.catalina.UserDatabase"/>
+  	<Resource auth="Container"	
+  				driverClassName="oracle.jdbc.driver.OracleDriver"
+  				type="javax.sql.DataSource"
+  				initialSize="5"
+  				minIdle="5"
+  				maxTotal="20"
+  				maxIdle="20"
+  				maxWaitMillis="5000"
+  				url="jdbc:oracle:thin:@localhost:1521:testdb"
+  				name="dbcp_myoracle"
+  				username="green"
+  				password="1234"/>
+  				
+  				<!-- type: 데이터소스로 사용할 클래스명
+					initialSize: 풀의 최초 초기화 과정에서 미리 만들어놓을 연결의 개수 (기본 0개)
+					minIdle : 최소한으로 유지할 연결 개수
+					maxTotal : 동시에 사용할 수 있는 최대 연결 개수(기본 8개)
+					maxIdle : 풀에 반납할때 최대로 유지될 수 있는 연결 개수 (기본 8개)
+					maxWaitMillis : 새로운 요청이 들어왔을 때 얼마나 대기할지를 밀리초 단위로 기술
+					name: 생성할 자원 이름 (풀이름) -->
+  
   </GlobalNamingResources>
 
   <!-- A "Service" is a collection of one or more "Connectors" that share
@@ -134,7 +155,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="ex08_20250428" path="/ex08_20250428" reloadable="true" source="org.eclipse.jst.jee.server:ex08_20250428"/></Host>
+      <Context docBase="ex08_20250428" path="/ex08_20250428" reloadable="true" source="org.eclipse.jst.jee.server:ex08_20250428"/><Context docBase="test03_20250425_2nd" path="/test03_20250425_2nd" reloadable="true" source="org.eclipse.jst.jee.server:test03_20250425_2nd"/><Context docBase="ex09_20250429" path="/ex09_20250429" reloadable="true" source="org.eclipse.jst.jee.server:ex09_20250429"/><Context docBase="ex04_20250423" path="/ex04_20250423" reloadable="true" source="org.eclipse.jst.jee.server:ex04_20250423"/></Host>
     </Engine>
   </Service>
 </Server>
