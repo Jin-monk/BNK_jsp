@@ -37,18 +37,7 @@
          UserDatabaseRealm to authenticate users
     -->
     <Resource auth="Container" description="User database that can be updated and saved" factory="org.apache.catalina.users.MemoryUserDatabaseFactory" name="UserDatabase" pathname="conf/tomcat-users.xml" type="org.apache.catalina.UserDatabase"/>
-  	<Resource auth="Container"	
-  				driverClassName="oracle.jdbc.driver.OracleDriver"
-  				type="javax.sql.DataSource"
-  				initialSize="5"
-  				minIdle="5"
-  				maxTotal="20"
-  				maxIdle="20"
-  				maxWaitMillis="5000"
-  				url="jdbc:oracle:thin:@localhost:1521:testdb"
-  				name="dbcp_myoracle"
-  				username="green"
-  				password="1234"/>
+  	<Resource auth="Container" driverClassName="oracle.jdbc.driver.OracleDriver" initialSize="5" maxIdle="20" maxTotal="20" maxWaitMillis="5000" minIdle="5" name="dbcp_myoracle" password="1234" type="javax.sql.DataSource" url="jdbc:oracle:thin:@localhost:1521:testdb" username="green"/>
   				
   				<!-- type: 데이터소스로 사용할 클래스명
 					initialSize: 풀의 최초 초기화 과정에서 미리 만들어놓을 연결의 개수 (기본 0개)
@@ -155,7 +144,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="ex08_20250428" path="/ex08_20250428" reloadable="true" source="org.eclipse.jst.jee.server:ex08_20250428"/><Context docBase="test03_20250425_2nd" path="/test03_20250425_2nd" reloadable="true" source="org.eclipse.jst.jee.server:test03_20250425_2nd"/><Context docBase="ex09_20250429" path="/ex09_20250429" reloadable="true" source="org.eclipse.jst.jee.server:ex09_20250429"/><Context docBase="ex04_20250423" path="/ex04_20250423" reloadable="true" source="org.eclipse.jst.jee.server:ex04_20250423"/></Host>
+      <Context docBase="test04_20250430_bank" path="/test04_20250430_bank" reloadable="true" source="org.eclipse.jst.jee.server:test04_20250430_bank"/></Host>
     </Engine>
   </Service>
 </Server>
